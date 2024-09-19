@@ -45,6 +45,13 @@ label start:
             jump nervous
         "Confident": 
             jump confident
+    
+    label confident:
+        e "Ok, this should be fine."
+
+        n "It wasn't."                      # TODO: a real branch here
+
+        jump nervous
 
     label nervous:
         e "{i}Shit! I don't know what to do...{/i}"
@@ -68,18 +75,13 @@ label start:
                 jump app
             "Uninstall it":
                 jump uninstall
-
-        return
-
-    label confident:
-        e "Ok, this should be fine."
-
-        n "It wasn't."
-
-        jump nervous
     
 
     label uninstall:
+        n "You press your finger on the app for a few seconds but nothing appears."
+
+        n "You decide to give it a try and press the icon."
+
         jump app
 
     label app:
