@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 85: end of line expected.
-    f "Hey, my name is " + PLACEHOLDER + ", what's yours?"
-                         ^
+File "game/script.rpy", line 102: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    jump enter_name
+    ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Wed Sep 18 14:59:39 2024
+Thu Sep 19 08:53:15 2024

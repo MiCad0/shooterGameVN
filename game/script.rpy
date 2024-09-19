@@ -3,7 +3,7 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+define e = Character("You")
 define n = Character("")
 define f = Character("Friend", color="#c8c8ff")
 default placeholder_name = "PLACEHOLDER"
@@ -80,10 +80,12 @@ label start:
     
 
     label uninstall:
+        jump app
+
     label app:
         e "{i}Welcome to ZBEUL... OK. Please read... I agree.{/i}"
 
-        e "{i}Oh it's just the app of the uni, but how did it get to my phone?{/i}"
+        e "{i}Oh it's just the app of the uni, but how did it get on my phone?{/i}"
 
         n "A strange voice interupts your thinking."
 
@@ -91,6 +93,26 @@ label start:
 
         e "{i} Who's this weirdo? {/i}"
 
+        e "{i} I said I was gonna talk to the first PERSON to enter. {/i}"
+
+        f "Do-You-English?"
+
+        e "Oh shit yeah sorry. I'm "
+
+        jump enter_name
+
+    label enter_name:
+        $ player_name = False
+        while not player_name:
+            $ player_name = renpy.input("Enter your name:")
+            $ player_name = player_name.strip()
+            $ e = Character(player_name)
+            if not player_name:
+                n "Not even funny."
+
+        f "What are you doing all alone [player_name]?"
+
+        e "Same goes for you doesn't it?"
 
 
     # This ends the game.
