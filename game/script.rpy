@@ -1,0 +1,98 @@
+﻿# The script of the game goes in this file.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+define e = Character("Eileen")
+define n = Character("")
+define f = Character("Friend", color="#c8c8ff")
+default placeholder_name = "PLACEHOLDER"
+
+
+
+# The game starts here.
+
+label start:
+
+    # Show a background. This uses a placeholder by default, but you can
+    # add a file (named either "bg room.png" or "bg room.jpg") to the
+    # images directory to show it.
+
+    scene bg room
+
+    # This shows a character sprite. A placeholder is used, but you can
+    # replace it by adding a file named "eileen happy.png" to the images
+    # directory.
+
+    show eileen happy
+
+    # These display lines of dialogue.
+
+    e "{i}Here I am.{/i}"
+
+    e "{i}I left everything to come here. This is my last chance to make things right.{/i}"
+
+    e "{i}I can't mess this up.{/i}"
+
+    n "You walk through the gate of your new school, ready to start fresh."
+
+    n "You're determined to make the most of this opportunity."
+
+    n "You're feeling..."
+
+    menu:
+        "Nervous": 
+            jump nervous
+        "Confident": 
+            jump confident
+
+    label nervous:
+        e "{i}Shit! I don't know what to do...{/i}"
+
+        e "{i}I should just head straight to the classroom.{/i}"
+
+        n "You enter the class first, while all the other students are already making friends outside."
+
+        e "{i}If you're here, that means you deserve it, right?{/i}"
+
+        e "{i}Should be easy for me to blend in. I'm gonna talk to the first person to enter the room.{/i}"
+
+        e "{i}I should text mom to let her know everything's fine at uni.{/i}"
+
+        n "As soon as you send her the text, you discover a new app you never seen before on your phone."
+
+        e "{i}What the fuck is Z.B.E.U.L. Land?{/i}"
+
+        menu:
+            "Open it":
+                jump app
+            "Uninstall it":
+                jump uninstall
+
+        return
+
+    label confident:
+        e "Ok, this should be fine."
+
+        n "It wasn't."
+
+        jump nervous
+    
+
+    label uninstall:
+    label app:
+        e "{i}Welcome to ZBEUL... OK. Please read... I agree.{/i}"
+
+        e "{i}Oh it's just the app of the uni, but how did it get to my phone?{/i}"
+
+        n "A strange voice interupts your thinking."
+
+        f "Hey, my name is [placeholder_name], what's yours?"
+
+        e "{i} Who's this weirdo? {/i}"
+
+
+
+    # This ends the game.
+
+    return

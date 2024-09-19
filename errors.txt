@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 85: end of line expected.
+    f "Hey, my name is " + PLACEHOLDER + ", what's yours?"
+                         ^
+
+Ren'Py Version: Ren'Py 8.3.2.24090902
+Wed Sep 18 14:59:39 2024
