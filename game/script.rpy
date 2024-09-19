@@ -3,9 +3,9 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("You")
-define n = Character("")
-define f = Character("Friend", color="#c8c8ff")
+define e = Character("You")         # Main character
+define n = Character("")            # Narrator
+define f = Character("Friend", color="#c8c8ff") # Friend
 default placeholder_name = "PLACEHOLDER"
 
 
